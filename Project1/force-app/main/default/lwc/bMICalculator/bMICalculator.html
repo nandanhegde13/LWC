@@ -1,0 +1,8 @@
+<template>
+  <lightning-card title={cardTitle}>
+    <lightning-input  label = "weight" placeholder="Enter your weight" onchange={weightHandler}></lightning-input>
+    <lightning-input label = "height" placeholder="Enter your height" onchange={heightHandler}></lightning-input>
+    <lightning-button label= "Calculate" onclick={clickHandler}></lightning-button>
+    <p>{BMIValue}</p>
+</lightning-card>  
+</template>

@@ -15,9 +15,11 @@
           <lightning-button label="Devide" icon-name="utility:magicwand" icon-position="right" onclick={divHandler}></lightning-button>
         </lightning-button-group>
         </lightning-layout-item>
-        <lightning-layout-item padding="around-medium">
-            <lightning-formatted-text value={currentResult} ></lightning-formatted-text>
-         </lightning-layout-item>
+         <p style="margin-left:25px;">{currentResult}</p>
+         <lightning-input type="checkbox" onclick={checkboxHandler}></lightning-input>
+            <template if:true={condition}>
+          <template for:each={previousResult} for:item="a"><li key={a}>{a}</li></template>  
+        </template>
    </lightning-layout>
 
 </lightning-card>    

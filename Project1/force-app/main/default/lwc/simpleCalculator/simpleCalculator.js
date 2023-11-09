@@ -2,7 +2,8 @@ import { LightningElement, track } from 'lwc';
 
 export default class SimpleCalculator extends LightningElement {
 @track currentResult;
-
+@track previousResult=[];
+@track condition = false;
 
 firstNumber;
 secondNumber;
@@ -26,28 +27,44 @@ addHandler()
     var second  = parseInt(this.secondNumber);
        
     this.currentResult = first+second;
-    console.log(this.currentResult);
+    this.previousResult.push(this.currentResult);
+    console.log(this.previousResult);
 }
 subHandler()
 {
     var first = parseInt(this.firstNumber);
     var second  = parseInt(this.secondNumber);
-       
     this.currentResult = first-second;
+    this.previousResult.push(this.currentResult);
+     
+   
+    console.log(this.previousResult);
 }
 mulHandler()
 {
     var first = parseInt(this.firstNumber);
     var second  = parseInt(this.secondNumber);
-       
     this.currentResult = first*second;
+    this.previousResult.push(this.currentResult);
+    
+    console.log(this.previousResult); 
+  
 }
 divHandler()
 {
     var first = parseInt(this.firstNumber);
     var second  = parseInt(this.secondNumber);
-       
     this.currentResult = first/second;
-}
+    this.previousResult.push(this.currentResult);
 
+    console.log(this.previousResult);
+   
+}
+         
+checkboxHandler(event)
+{
+  
+        this.condition = event.target.checked;
+ 
+}
 }
