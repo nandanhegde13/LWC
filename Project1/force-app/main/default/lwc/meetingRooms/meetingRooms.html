@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Meeting Room Info">
+    <template for:each={meetingRoomInfo} for:item="room">
+       <c-meeting-room meeting-room-info={room} key={room.roomName}></c-meeting-room>
+    </template>
+    </lightning-card>
+</template>
