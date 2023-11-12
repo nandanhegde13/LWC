@@ -4,7 +4,7 @@ export default class BMICalculator extends LightningElement {
 
     weight;
     height;
-    result;
+    result=0;
 
     weightHandler(event)
     {
